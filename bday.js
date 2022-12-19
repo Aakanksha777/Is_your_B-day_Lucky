@@ -2,16 +2,26 @@ const dob = document.querySelector("#dob");
 const luckyNum = document.querySelector("#luckyNum");
 const checkBtn = document.querySelector("#checkBtn");
 
+function compareValue ( sum , luckyNum) {
+    if ( sum % luckyNum === 0) {
+        console.log("you are lucky")
+    } else {
+        console.log("choose another number as your lucky number.")
+    }
+}
+
+
 function checkedNum () {
     const dobValue = dob.value;
-    const luckyValue = luckyNum.value;
+    // const luckyValue = luckyNum.value;
     const sum = userLuckyNum (dobValue)
+    let compareValue = sum + luckyNum.value
     console.log(sum)
+    console.log(compareValue)
 }
 
 
 function userLuckyNum (dobValue) {
-    console.log(dobValue)
     dobValue = dobValue.replaceAll("-","")
     let sum = 0
 
