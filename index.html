@@ -8,16 +8,20 @@
     <link rel="stylesheet" href="./bday.css" />
   </head>
   <body>
+    <!--find out if the sum of digits of birthday is divisible by the lucky number.-->
     <div class="main-container">
       <h2>Is Your B'Day Lucky?<span> &#127874;</span></h2>
 
       <label for="dob">Date of Birth</label>
-      <input type="date" id="dob">
-
-      <label for="luckyNo">Date of Birth</label>
-      <input type="number" id="luckyNum">
+      <input type="date" id="dob">  <!-- Take user's complete birthday -->
+      
+      
+      <label for="luckyNo">Lucky Number</label>
+      <input type="number" id="luckyNum" max="1">  <!--his/her lucky number-->
 
       <button id="checkBtn">check Number</button>
+      <h2 id="sumDob"></h2>
+      <h2 id="sumOfLuckyNo"></h2>
 
     </div>
     <script src="./bday.js"></script>

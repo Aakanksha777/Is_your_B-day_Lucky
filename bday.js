@@ -1,41 +1,37 @@
 const dob = document.querySelector("#dob");
 const luckyNum = document.querySelector("#luckyNum");
 const checkBtn = document.querySelector("#checkBtn");
+const sumDob = document.querySelector("#sumDob");
+const sumOfLuckyNo = document.querySelector("#sumOfLuckyNo");
 
-function compareValue ( sum , luckyNum) {
-    if ( sum % luckyNum === 0) {
-        console.log("you are lucky")
+function sumOfDob (date) { 
+  dobValue = dob.value
+  dobValue = dobValue.replaceAll("-","")
+  console.log(dobValue)
+  sum = 0 
+  for(i=0; i<dobValue.length; i++){
+    // console.log(dobValue[i])
+    sum = sum + Number (dobValue.charAt(i))
+    console.log("sum", sum)
+  }
+  return sum
+}
+
+function IsYourBdayLucky () {
+    debugger;
+    const luckyNumValue = luckyNum.value
+    const sum = sumOfDob ()
+    // sumDob.innerHTML = "sum of data of birth " + sum;
+    // sumOfLuckyNo.innerHTML = "lucky number "+ luckyNumValue;
+
+
+    if (sum%luckyNumValue == 0) {
+        console.log("numerology is checking")
     } else {
-        console.log("choose another number as your lucky number.")
-    }
-}
-
-
-function checkedNum () {
-    const dobValue = dob.value;
-    // const luckyValue = luckyNum.value;
-    const sum = userLuckyNum (dobValue)
-    let compareValue = sum + luckyNum.value
-    console.log(sum)
-    console.log(compareValue)
-}
-
-
-function userLuckyNum (dobValue) {
-    dobValue = dobValue.replaceAll("-","")
-    let sum = 0
-
-    // for loop 
-    for(let i=0; i < dobValue.length; i++) {
-        sum = sum + Number(dobValue.charAt(i))
+        console.log("cfvgbhnjkm")
     }
 
-    return sum
 }
 
-checkBtn.addEventListener("click", checkedNum)
 
-//Notes: 
-// replace - to nothing. eg: 2023-12-20 to 20231220.
-// typeCast changes datatype. eg: string to Number.
-// sum + Number(dobValue.charAt(i)) == number keyword here used for change string to number.
+checkBtn.addEventListener("click", IsYourBdayLucky);
